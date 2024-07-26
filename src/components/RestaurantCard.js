@@ -1,4 +1,4 @@
-import { CDN_URL } from "../utils/contants";
+import { CDN_URL } from "../utils/constants";
 
 const styleCard = {
     backgroundColor: "#f0f0f0",
