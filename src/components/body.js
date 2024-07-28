@@ -1,11 +1,23 @@
 import RestaurantCard from "./RestaurantCard";
-import { useState } from "react";
-import resList from "../utils/mockData";
+import { useState, useEffect } from "react";
+
 
 
 const Body = () => {
 //local state variable- super powerful variable  yani filter wala auto ui change karne 
-    const [listOfRestaurants , setListRestraunt] = useState(resList);
+    const [listOfRestaurants , setListRestraunt] = useState([]);
+    useEffect(()=>{
+       
+        fetchData();
+    } ,[]);
+
+   const fetchData = async () => {
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.51800&lng=88.38320&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+
+        const json = await data.json();
+        console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+        setListRestraunt(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+    }; 
 
     return(
         <div className="body">
