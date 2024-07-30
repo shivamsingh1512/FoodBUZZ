@@ -19,12 +19,10 @@ const Body = () => {
         //optinal chaining
         setListRestraunt(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }; 
-
-    if(listOfRestaurants == 0){
-        return <Shimmer />;
-    }
-
-    return(
+    
+    return listOfRestaurants.length === 0 ? (
+        <Shimmer />
+    ): (
         <div className="body">
         <div className="filter">
             <button className="filter-btn" 
