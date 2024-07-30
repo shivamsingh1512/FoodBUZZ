@@ -61,3 +61,15 @@
   margin: 10px;
   cursor: pointer;
 }
+
+.shimmer-conatiner{
+  display: flex;
+  justify-content:center ;
+}
+
+.shimmer-card{
+  margin:50px;
+  width: 200px;
+  height: 400px;
+  background-color:#f0f0f0 ;
+}

@@ -1,6 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
-
+import Shimmer from "./Shimmer"
 
 
 const Body = () => {
@@ -16,8 +16,13 @@ const Body = () => {
 
         const json = await data.json();
         console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
-        setListRestraunt(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+        //optinal chaining
+        setListRestraunt(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }; 
+
+    if(listOfRestaurants == 0){
+        return <Shimmer />;
+    }
 
     return(
         <div className="body">
