@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
 //local state variable- super powerful variable  yani filter wala auto ui change karne   
@@ -28,7 +29,7 @@ const Body = () => {
         <div className="body">
             <div className="filter">
                 <div className="search">
-                    <input
+                    <input 
                         type="text"
                         className="search-box"
                         placeholder="search"
@@ -37,7 +38,7 @@ const Body = () => {
                             setsearchText(e.target.value);
                         }}
                     />
-                    <button
+                    <button className="search-btn"
                         onClick={() => {
                             console.log(searchText);
                             const filteredRestaurant = listOfRestaurants.filter(
@@ -65,7 +66,11 @@ const Body = () => {
             </div>
             <div className="res-container">
                 {filterRestaurant?.map((restaurant) => (
-                    <RestaurantCard key={restaurant.info.id} resData={restaurant} />// looping the restaurantcard dynamic.... and key is every card have unique value.
+                    <Link 
+                    key={restaurant.info.id}
+                    to={"/restaurant/" + restaurant.info.id}>
+                        <RestaurantCard resData={restaurant} />
+                    </Link>// looping the restaurantcard dynamic.... and key is every card have unique value.
                 ))}
             </div>
         </div>

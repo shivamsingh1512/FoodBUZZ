@@ -3,73 +3,128 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background-color: #f8f9fa;
+  padding: 20px;
+  background-color: #f8f9fa; /* Light grey background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo-container {
-  flex: 1;
+flex: 1;
 }
 
 .logo {
-  max-width: 100px;
+max-width: 100px;
+}
+
+.nav-items{
+display: flex;
+align-items: center;
 }
 
 .nav-items ul {
-  display: flex;
-  list-style-type: none;
-  padding: 0;
+display: flex;
+list-style-type: none;
+/* display: flex;
+list-style-type: none;
+padding: 0; */
 }
 
 .nav-items li {
-  margin: 0 10px;
-  cursor: pointer;
+margin: 0 20px;
+font-size: 22px; /* Increase the size of li */
+cursor: pointer;
+transition: color 0.3s ease;
+/* margin: 0 10px;
+cursor: pointer; */
 }
+
+.nav-items li a {
+text-decoration: none;
+color: #343a40; /* Dark grey for text color */
+font-weight: 500; /* Slightly bold */
+}
+
+.nav-items li a:hover {
+color: #007bff; /* Change color on hover */
+}
+
 .res-container{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
 }
 
 .res-card {
-  margin: 7px;
-  padding: 5px;
-  height: 400px;
-  width: 300px;
-  border-radius: 3px;
-  
+margin: 7px;
+padding: 5px;
+height: 400px;
+width: 300px;
+border-radius: 3px;
+
 }
 
 
 .res-card:hover {
-  cursor: pointer;
-  border: 2px solid black;
+cursor: pointer;
+border: 2px solid black;
 }
 
 .search {
-  padding: 10px;
+padding: 10px;
 }
 
 .res-logo{
-  height: 200px;
-  width: 290px;
-  padding: 5px;
+height: 200px;
+width: 290px;
+padding: 5px;
 }
 
 .filter-btn{
-  padding: 5px;
-  margin: 10px;
-  cursor: pointer;
+height: 30px;
+width: 200px;
+padding: 5px;
+border-radius: 10px;
+margin: 10px;
+cursor: pointer;
 }
 
 .shimmer-conatiner{
-  display: flex;
-  justify-content:center ;
+display: flex;
+justify-content:center ;
 }
 
 .shimmer-card{
-  margin:50px;
-  width: 200px;
-  height: 400px;
-  background-color:#f0f0f0 ;
+margin:50px;
+width: 200px;
+height: 400px;
+background-color:#f0f0f0 ;
+}
+
+.search-btn {
+height: 30px;
+width: 70px;
+margin: 10px;
+border-radius: 10px;
+cursor: pointer;
+}
+
+.search-box{
+height: 30px;
+width: 200px;
+border-radius: 10px;
+}
+
+.login {
+margin-left: 20px; /* Space between nav items and button */
+padding: 10px 20px;
+background-color: #007bff; /* Blue background */
+color: #fff; /* White text */
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.login:hover {
+background-color: #0056b3; /* Darker blue on hover */
 }
